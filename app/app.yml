@@ -1,0 +1,65 @@
+name: DataView Demo
+version: 0.0.1
+build: 1
+encrypt stacks: false
+multiple instances: false
+relaunch in background: false
+creator code:
+application data folder:
+  user:
+    default:
+    macos:
+    windows:
+    linux:
+    ios:
+    android:
+  shared:
+    default:
+    macos:
+    windows:
+    linux:
+preferences filename:
+  user:
+    default:
+    macos:
+    windows:
+    linux:
+    ios:
+    android:
+  shared:
+    default:
+    macos:
+    windows:
+    linux:
+ui:
+  - folder: ./ui
+templates:
+  - folder: ./templates
+libraries:
+  - folder: ./libraries
+frontscripts:
+  - folder: ./frontscripts
+backscripts:
+  - folder: ./backscripts
+helpers:
+  - folder: ./helpers
+  - filename: "[[FRAMEWORK]]/helpers/preferences"
+behaviors:
+  - folder: ./behaviors
+build folder: ../builds
+build profiles:
+  all profiles:
+    packager callbacks stackfile:
+    certificates:
+      macos:
+        name:
+    copy files:
+      all platforms:
+        - filename: assets
+      macos:
+      windows:
+      linux:
+      ios:
+      android:
+  release:
+  beta:
