@@ -4,6 +4,8 @@ This repo contains a Levure application which demonstrates how to use the DataVi
 
 To open the application, launch LiveCode and open the `./app/standalone.livecode` stack file, switch to the Browse tool, and click on the **Open Application** button.
 
+Levure: https://github.com/trevordevore/levure
+
 DataView helper: https://github.com/trevordevore/levurehelper-dataview
 
 DataView Tree helper: https://github.com/trevordevore/levurehelper-dataview-tree
