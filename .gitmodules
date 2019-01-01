@@ -6,4 +6,4 @@
 	url = https://github.com/trevordevore/levurehelper-dataview.git
 [submodule "app/helpers/dataview_tree"]
 	path = app/helpers/dataview_tree
-	url = https://github.com/trevordevore/levurehelper-dataview-tree.git
+	url = https://github.com/trevordevore/levurehelper-dataview_tree.git
