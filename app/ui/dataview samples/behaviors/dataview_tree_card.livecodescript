@@ -6,9 +6,11 @@ local sRootFolder
 on resizeStack pWidth, pHeight
   local tRect
 
+  set the bottomleft of field "LblMessage" to 20,pHeight-12
+
   put the rect of group "FolderListing" into tRect
   put pWidth - 20 into item 3 of tRect
-  put pHeight - 20 into item 4 of tRect
+  put the top of field "LblMessage" - 8 into item 4 of tRect
   set the rect of group "FolderListing" to tRect
 end resizeStack
 
