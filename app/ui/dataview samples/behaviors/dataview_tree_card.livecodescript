@@ -102,7 +102,7 @@ private function createNodesForFolder pFolder
 
   repeat for each line tFolder in tFolders
     put empty into tNodeA
-    put tFolder into tNodeA["label"]
+    put tFolder into tNodeA["filename"]
     put tRelativeFolder & tFolder into tNodeA["relative path"]
     put hashForFile(tNodeA["relative path"]) into tNodeA["id"]
     put "folder" into tNodeA["type"]
@@ -116,7 +116,7 @@ private function createNodesForFolder pFolder
 
   repeat for each line tFile in tFiles
     put empty into tNodeA
-    put tFile into tNodeA["label"]
+    put tFile into tNodeA["filename"]
     put tRelativeFolder & tFile into tNodeA["relative path"]
     put hashForFile(tNodeA["relative path"]) into tNodeA["id"]
     put "file" into tNodeA["type"]
