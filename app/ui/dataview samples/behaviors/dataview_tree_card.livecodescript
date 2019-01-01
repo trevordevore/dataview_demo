@@ -56,6 +56,16 @@ command uiToggleRow pRow
 end uiToggleRow
 
 
+command uiLaunchFile pRow
+  local tFilepath
+
+  dispatch function "GetValueForKeyInRow" to group "FolderListing" with pRow, "relative path"
+  put sRootFolder & "/" & the result into tFilepath
+
+  launch document tFilepath
+end uiLaunchFile
+
+
 /**
 Summary: Populate tree with level 1 contents of folder.
 

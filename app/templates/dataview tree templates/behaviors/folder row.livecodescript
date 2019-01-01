@@ -50,3 +50,10 @@ on mouseUp pBtn
   end if
   pass mouseUp
 end mouseUp
+
+
+on mouseDoubleUp pBtnNum
+  if pBtnNum is 1 then
+    uiLaunchFile the dvRow of me
+  end if
+end mouseDoubleUp

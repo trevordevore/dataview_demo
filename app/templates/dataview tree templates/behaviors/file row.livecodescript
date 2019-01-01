@@ -31,3 +31,10 @@ end dvHilite
 getProp dvRowControl
   return the long id of me
 end dvRowControl
+
+
+on mouseDoubleUp pBtnNum
+  if pBtnNum is 1 then
+    uiLaunchFile the dvRow of me
+  end if
+end mouseDoubleUp
