@@ -8,10 +8,10 @@ on resizeStack pWidth, pHeight
 
   set the bottomleft of field "LblMessage" to 20,pHeight-12
 
-  put the rect of group "FolderListing" into tRect
+  put the rect of group "FileBrowser" into tRect
   put pWidth - 20 into item 3 of tRect
   put the top of field "LblMessage" - 8 into item 4 of tRect
-  set the rect of group "FolderListing" to tRect
+  set the rect of group "FileBrowser" to tRect
 end resizeStack
 
 /**
@@ -43,17 +43,17 @@ end uiSelectFolder
 
 
 command uiToggleRow pRow
-  if the dvtRowIsExpanded[pRow] of group "FolderListing" then
-    set the dvtRowChildren[pRow] of group "FolderListing" to empty
-    dispatch "SetRowIsExpanded" to group "FolderListing" with pRow, empty, false
+  if the dvtRowIsExpanded[pRow] of group "FileBrowser" then
+    set the dvtRowChildren[pRow] of group "FileBrowser" to empty
+    dispatch "SetRowIsExpanded" to group "FileBrowser" with pRow, empty, false
   else
     local tFolder, tNodesA
 
-    dispatch function "GetValueForKeyInRow" to group "FolderListing" with pRow, "relative path"
+    dispatch function "GetValueForKeyInRow" to group "FileBrowser" with pRow, "relative path"
     put sRootFolder & "/" & the result into tFolder
     put createNodesForFolder(tFolder) into tNodesA
-    set the dvtRowChildren[pRow] of group "FolderListing" to tNodesA
-    dispatch "SetRowIsExpanded" to group "FolderListing" with pRow, empty, true
+    set the dvtRowChildren[pRow] of group "FileBrowser" to tNodesA
+    dispatch "SetRowIsExpanded" to group "FileBrowser" with pRow, empty, true
   end if
 end uiToggleRow
 
@@ -61,11 +61,71 @@ end uiToggleRow
 command uiLaunchFile pRow
   local tFilepath
 
-  dispatch function "GetValueForKeyInRow" to group "FolderListing" with pRow, "relative path"
+  dispatch function "GetValueForKeyInRow" to group "FileBrowser" with pRow, "relative path"
   put sRootFolder & "/" & the result into tFilepath
 
   launch document tFilepath
 end uiLaunchFile
+
+
+command uiResetFileBrowser
+  dispatch "ResetView" to group "FileBrowser"
+end uiResetFileBrowser
+
+
+/**
+Summary: Tell the DataView to start editing the filename of the currently selected row.
+
+Description:
+Refer to the `EditKey` handler in the behavior attached to the
+**FileBrowser** group (file_browser.livecodescript).
+
+Returns: nothing
+*/
+command uiRenameCurrentSelection
+  dispatch "EditKeyOfRow" to group "FileBrowser" with "filename", the dvHilitedRow of group "FileBrowser"
+end uiRenameCurrentSelection
+
+
+/**
+Summary: Called from the FileBrowser behaivor (file_browser.livecodescript) script when the user has entered a new filename.
+
+Parameters:
+pRow: The target row.
+pNewName: The new name.
+
+Returns: nothing
+*/
+command uiRenameFileOrFolder pRow, pNewName
+  local tFilepath, tNewFilePath
+
+  dispatch function "GetValueForKeyInRow" to group "FileBrowser" with pRow, "relative path"
+  put sRootFolder & "/" & the result into tFilepath
+  put tFilePath into tNewFilePath
+
+  set the itemdelimiter to "/"
+  put pNewName into the last item of tNewFilePath
+
+  answer quote & tFilepath & quote && "would be renamed to" && quote & tNewFilePath & quote
+end uiRenameFileOrFolder
+
+
+/**
+Summary: Respond to the contextual menu menuPick message.
+
+Description:
+This will trigger a sequence of events which will open a field
+for editing the filename of the selected row.
+
+Returns: nothing
+*/
+on menuPick pItem
+  switch pItem
+    case "rename"
+      uiRenameCurrentSelection
+      break
+  end switch
+end menuPick
 
 
 /**
@@ -84,8 +144,8 @@ command DisplayFolderInDataView pFolder
 
   put createNodesForFolder(pFolder) into tNodesA
 
-  set the dvtTree of group "FolderListing" to tNodesA
-  dispatch "RenderView" to group "FolderListing"
+  set the dvtTree of group "FileBrowser" to tNodesA
+  dispatch "RenderView" to group "FileBrowser"
 end DisplayFolderInDataView
 
 
