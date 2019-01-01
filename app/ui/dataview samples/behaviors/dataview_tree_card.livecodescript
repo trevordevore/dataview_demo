@@ -3,7 +3,7 @@ script "DataView Tree Card Behavior"
 local sRootFolder
 
 
-on resizeStack pWidth, pHeight
+on ResizeView pWidth, pHeight
   local tRect
 
   set the bottomleft of field "LblMessage" to 20,pHeight-12
@@ -12,7 +12,7 @@ on resizeStack pWidth, pHeight
   put pWidth - 20 into item 3 of tRect
   put the top of field "LblMessage" - 8 into item 4 of tRect
   set the rect of group "FileBrowser" to tRect
-end resizeStack
+end ResizeView
 
 /**
 Summary: Request from DataView Tree for node data to display.

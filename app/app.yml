@@ -44,6 +44,7 @@ backscripts:
 helpers:
   - folder: ./helpers
   - filename: "[[FRAMEWORK]]/helpers/preferences"
+  - filename: "[[FRAMEWORK]]/helpers/window_manager"
 behaviors:
   - folder: ./behaviors
 build folder: ../builds
