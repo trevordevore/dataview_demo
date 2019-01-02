@@ -3,3 +3,4 @@
 
 # Misc
 .env
+*.sublime-workspace
