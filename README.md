@@ -1,6 +1,6 @@
 # DataView Demo Levure Project
 
-This repo contains a Levure application which demonstrates how to use the DataView and DataView Tree helpers.
+This repo contains a Levure application which demonstrates how to use the DataView and DataView Tree helpers. If you are checking this repo out with git on your local computer make sure you initialize submodules. Levure, DataView helper, and DataView Tree helper are all submodules.
 
 To open the application, launch LiveCode and open the `./app/standalone.livecode` stack file, switch to the Browse tool, and click on the **Open Application** button.
 
