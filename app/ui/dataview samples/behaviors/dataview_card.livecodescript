@@ -48,8 +48,6 @@ private command _populateDataView
     put tExtensionsA[tExtension]["source_file"] into tDataA[i]["source_file"]
   end repeat
 
-  put tDataA[1]["icon"]
-
   set the dvData of group "Extensions" to tDataA
   dispatch "RenderView" to group "Extensions"
 end _populateDataView
