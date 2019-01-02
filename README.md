@@ -10,11 +10,13 @@ DataView helper: https://github.com/trevordevore/levurehelper-dataview
 
 DataView Tree helper: https://github.com/trevordevore/levurehelper-dataview-tree
 
-Requirements: LiveCode 8 or higher
+Requirements: Tested with LiveCode 9.
 
 ## DataView Example
 
-TODO...
+The DataView example displays all of the extensions installed in the LiveCode IDE as returned by the function `revIDEExtensions()`. Each row lists the extension name, version, and author. Double-clicking on a row will reveal the folder where the extension is installed.
+
+You will find the row templates used in the DataView in the `./app/templates/dataview templates` folder.
 
 ## DataView Tree Example
 
