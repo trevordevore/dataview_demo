@@ -7,3 +7,6 @@
 [submodule "app/helpers/dataview_tree"]
 	path = app/helpers/dataview_tree
 	url = https://github.com/trevordevore/levurehelper-dataview_tree.git
+[submodule "app/helpers/dataview_dbcursor"]
+	path = app/helpers/dataview_dbcursor
+	url = https://github.com/trevordevore/levurehelper-database_dbcursor.git
