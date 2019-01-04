@@ -41,6 +41,7 @@ private command _populateDataView
     add 1 to i
 
     put tExtension into tDataA[i]["name"]
+    put i into tDataA[i]["id"]
     put tExtensionsA[tExtension]["author"] into tDataA[i]["author"]
     put tExtensionsA[tExtension]["icon"] into tDataA[i]["icon"]
     put tExtensionsA[tExtension]["install_path"] into tDataA[i]["install_path"]
