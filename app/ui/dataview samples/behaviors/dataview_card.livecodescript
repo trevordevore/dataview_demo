@@ -14,7 +14,11 @@ end ResizeView
 
 
 on OpenView pHasBeenOpened
-  _populateDataView
+  if the environment is "development" then
+    _populateDataView
+  else
+    answer "This tab only works in the LiveCode IDE as it lists installed extensions."
+  end if
 end OpenView
 
 
