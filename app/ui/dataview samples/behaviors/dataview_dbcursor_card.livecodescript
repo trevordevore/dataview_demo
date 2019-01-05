@@ -34,13 +34,14 @@ end ResizeView
 
 
 on OpenView pHasBeenOpened
-  _populateDataView
-  set the text of field "LblMessage" to "Number of icons:" && the viewProp["number of rows"] of group "Icons"
+  # allow view to load immediately
+  send "PopulateDataView" to me in 0 seconds
 end OpenView
 
 
-private command _populateDataView
+command PopulateDataView
   put revQueryDatabase(sConnId, "SELECT * FROM icons") into sCursorId
   set the dvCursor of group "Icons" to sCursorId
   dispatch "RenderView" to group "Icons"
-end _populateDataView
+  set the text of field "LblMessage" to "Number of icons:" && the viewProp["number of rows"] of group "Icons"
+end PopulateDataView
