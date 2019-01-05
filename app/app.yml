@@ -56,7 +56,7 @@ build profiles:
         name:
     copy files:
       all platforms:
-        - filename: ./database/fontawesome.db
+        - filename: ./database
       macos:
       windows:
       linux:
