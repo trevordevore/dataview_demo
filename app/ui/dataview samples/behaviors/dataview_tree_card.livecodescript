@@ -14,6 +14,11 @@ on ResizeView pWidth, pHeight
   set the rect of group "FileBrowser" to tRect
 end ResizeView
 
+
+on closeCard
+  dispatch "ResetView" to group "FileBrowser"
+end closeCard
+
 /**
 Summary: Request from DataView Tree for node data to display.
 

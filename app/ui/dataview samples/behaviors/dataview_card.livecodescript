@@ -18,6 +18,11 @@ on OpenView pHasBeenOpened
 end OpenView
 
 
+on closeCard
+  dispatch "ResetView" to group "Extensions"
+end closeCard
+
+
 command uiRevealExtension pRow
   local tInstallPath
 
