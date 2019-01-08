@@ -26,7 +26,7 @@ command uiPopulateDataView
   local tNodesA
 
   put createNodesForEnvironment() into tNodesA
-  set the dvtTree of group "ControlBrowser" to tNodesA
+  set the dvTree of group "ControlBrowser" to tNodesA
   dispatch "ResetView" to group "ControlBrowser"
   dispatch "RenderView" to group "ControlBrowser"
 end uiPopulateDataView
@@ -49,14 +49,14 @@ end DataForNode
 
 
 command uiToggleRow pRow
-  if the dvtRowIsExpanded[pRow] of group "ControlBrowser" then
-    set the dvtRowChildren[pRow] of group "ControlBrowser" to empty
+  if the dvRowIsExpanded[pRow] of group "ControlBrowser" then
+    set the dvRowChildren[pRow] of group "ControlBrowser" to empty
     dispatch "SetRowIsExpanded" to group "ControlBrowser" with pRow, empty, false
   else
     local tNodesA
 
-    put createNodesForControlChildren(the dvtRowId[pRow] of group "ControlBrowser") into tNodesA
-    set the dvtRowChildren[pRow] of group "ControlBrowser" to tNodesA
+    put createNodesForControlChildren(the dvRowId[pRow] of group "ControlBrowser") into tNodesA
+    set the dvRowChildren[pRow] of group "ControlBrowser" to tNodesA
     dispatch "SetRowIsExpanded" to group "ControlBrowser" with pRow, empty, true
   end if
 end uiToggleRow

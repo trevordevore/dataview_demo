@@ -19,7 +19,7 @@ end FillInData
 on LayoutControl pControlRect
   local tLevel, tInset, tRect
 
-  put the dvtRowLevel[the dvRow of me] of me - 1 into tLevel
+  put the dvRowLevel[the dvRow of me] of me - 1 into tLevel
   put tLevel * 15 into tInset
   set the left of widget "Icon" of me to item 1 of pControlRect + 23 + tInset
   set the left of field "Name" of me to the right of widget "Icon" of me + 1

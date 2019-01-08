@@ -48,8 +48,8 @@ end uiSelectFolder
 
 
 command uiToggleRow pRow
-  if the dvtRowIsExpanded[pRow] of group "FileBrowser" then
-    set the dvtRowChildren[pRow] of group "FileBrowser" to empty
+  if the dvRowIsExpanded[pRow] of group "FileBrowser" then
+    set the dvRowChildren[pRow] of group "FileBrowser" to empty
     dispatch "SetRowIsExpanded" to group "FileBrowser" with pRow, empty, false
   else
     local tFolder, tNodesA
@@ -57,7 +57,7 @@ command uiToggleRow pRow
     dispatch function "GetValueForKeyInRow" to group "FileBrowser" with pRow, "relative path"
     put sRootFolder & "/" & the result into tFolder
     put createNodesForFolder(tFolder) into tNodesA
-    set the dvtRowChildren[pRow] of group "FileBrowser" to tNodesA
+    set the dvRowChildren[pRow] of group "FileBrowser" to tNodesA
     dispatch "SetRowIsExpanded" to group "FileBrowser" with pRow, empty, true
   end if
 end uiToggleRow
@@ -149,7 +149,7 @@ command DisplayFolderInDataView pFolder
 
   put createNodesForFolder(pFolder) into tNodesA
 
-  set the dvtTree of group "FileBrowser" to tNodesA
+  set the dvTree of group "FileBrowser" to tNodesA
   dispatch "RenderView" to group "FileBrowser"
 end DisplayFolderInDataView
 
