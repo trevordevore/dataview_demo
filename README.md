@@ -10,6 +10,8 @@ To open the application, launch LiveCode and open the
 `./app/standalone.livecode` stack file, switch to the Browse tool, and
 click on the **Open Application** button.
 
+Screencast walkthrough: https://youtu.be/euIHj1Qrokk
+
 Levure: https://github.com/trevordevore/levure
 
 DataView helper: https://github.com/trevordevore/levurehelper-dataview
