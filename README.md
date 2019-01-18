@@ -20,6 +20,8 @@ DataView Tree helper: https://github.com/trevordevore/levurehelper-dataview-tree
 
 DataView Database Cursor helper: https://github.com/trevordevore/levurehelper-database_dbcursor
 
+File Browser helper: https://github.com/trevordevore/levurehelper-file_browser
+
 Requirements: Tested with LiveCode 9.
 
 ## DataView Example
@@ -38,27 +40,29 @@ data arrays. This array is fed to the DataView.
 You will find the row template used in the DataView in the
 `./app/templates/dataview templates` folder.
 
-## DataView Tree Example
+## File Browser: DataView Tree Example
 
-The DataView Tree example creates a tree UI based on a folder you select
+The File Browser helper is a helper built on top of the DataView Tree. It creates a tree UI based on a folder you select
 on your computer. The UI allows you to expand the contents of any
 folders listed. Double-clicking on a file or folder will open it.
-
-The behavior of the DataView group is set to `stack "DataView Tree
-Behavior"`, the behavior that comes with the helper. The behavior
-scripts adds a `dvTree` property (among many others) that is set to a
-numerically indexed array of node arrays.
 
 You can right-click on a file or folder and rename it using the
 contextual menu. The file/folder will not actually be renamed but an
 answer dialog will appear showing you what the new name would be.
 
+## Stack Browser: DataView Tree Example
+
+The stack browser example is built on top of the DataView Tree. It creates a tree UI for browsing the open stacks in the IDE. The behavior of the DataView group is set to `stack "DataView Tree
+Behavior"`, the behavior that comes with the helper. The behavior
+scripts adds a `dvTree` property (among many others) that is set to a
+numerically indexed array of node arrays.
+
 You will find the row templates used in the DataView in the
-`./app/templates/dataview tree templates` folder.
+`./app/templates/dataview controls templates` folder.
 
-## DataView Database Cursor Example
+## FontAwesome: DataView Database Cursor Example
 
-The DataView Database Cursor example uses the **dataview_dbcursor**
+The FontAwesome tab is an example that uses the **dataview_dbcursor**
 helper to display a database cursor that has been opened using
 `revQueryDatabase()`. The database contains the name of drawing
 representations (see `drawingSvgCompile()` in the LiveCode docs) of the
@@ -108,3 +112,10 @@ command ImportSVGs
   revCloseDatabase tConnId
 end ImportSVGs
 ```
+
+## Movies: DataView Database Cursor Example
+
+The Movies tab also uses the **dataview_dbcursor** helper.
+
+You will find the row template used in the DataView in the
+`./app/templates/dataview movies templates` folder.
