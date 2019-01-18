@@ -1,14 +1,39 @@
-script "File Browser Behavior" with behavior "DataView Tree Behavior"
+script "File Browser Behavior" with behavior "File Browser DataView Tree Behavior"
 
+/**
+Summary: Look for right-clicks which trigger contextual menu.
+
+Description:
+If the dvRowControl property of `the target` is non-empty
+then a row was clicked on.
+*/
 on mouseDown pBtnNum
+  # dvMouseDown is defined in the DataView behavior. It will select the
+  # row that the user clicked on. This is necessary in order for the
+  # contextual menu to target the right row.
   dvMouseDown pBtnNum
 
   if pBtnNum is 3 then
     if the dvRowControl of the target is not empty then
+      # Note: `menuPick` is defined in the card behavior script.
       popup button "FileBrowserContextual"
     end if
   end if
 end mouseDown
+
+
+/**
+Summary: Look for double-clicks which trigger an action.
+
+Description:
+If the dvRowControl property of `the target` is non-empty
+then a row was clicked on.
+*/
+on mouseDoubleUp pBtnNumber
+  if pBtnNumber is 1 and the dvRowControl of the target is not empty then
+    uiLaunchFile the dvRow of the dvRowControl of the target
+  end if
+end mouseDoubleUp
 
 
 /**
