@@ -10,3 +10,6 @@
 [submodule "app/helpers/dataview_dbcursor"]
 	path = app/helpers/dataview_dbcursor
 	url = https://github.com/trevordevore/levurehelper-database_dbcursor.git
+[submodule "app/helpers/file_browser"]
+	path = app/helpers/file_browser
+	url = https://github.com/trevordevore/levurehelper-file_browser.git
