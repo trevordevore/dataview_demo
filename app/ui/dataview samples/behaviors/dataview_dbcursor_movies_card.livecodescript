@@ -42,7 +42,6 @@ end OpenView
 command PopulateDataView
   put revQueryDatabase(sConnId, "SELECT * FROM movies") into sCursorId
   set the dvCursor of group "Movies" to sCursorId
-  dispatch "RenderView" to group "Movies"
   set the text of field "LblMessage" to "Number of movies:" && the viewProp["number of rows"] of group "Movies"
 end PopulateDataView
 

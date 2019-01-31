@@ -42,6 +42,5 @@ end OpenView
 command PopulateDataView
   put revQueryDatabase(sConnId, "SELECT * FROM icons") into sCursorId
   set the dvCursor of group "Icons" to sCursorId
-  dispatch "RenderView" to group "Icons"
   set the text of field "LblMessage" to "Number of icons:" && the viewProp["number of rows"] of group "Icons"
 end PopulateDataView
