@@ -48,7 +48,6 @@ command uiSelectFolder
 
   if tFolder is not empty then
     set the dvRootFolder of group "FileBrowser" to tFolder
-    dispatch "RenderView" to group "FileBrowser"
   end if
 end uiSelectFolder
 

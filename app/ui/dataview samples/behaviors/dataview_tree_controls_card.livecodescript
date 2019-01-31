@@ -27,8 +27,6 @@ command uiPopulateDataView
 
   put createNodesForEnvironment() into tNodesA
   set the dvTree of group "ControlBrowser" to tNodesA
-  dispatch "ResetView" to group "ControlBrowser"
-  dispatch "RenderView" to group "ControlBrowser"
 end uiPopulateDataView
 
 
