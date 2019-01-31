@@ -59,5 +59,4 @@ private command _populateDataView
   end repeat
 
   set the dvData of group "Extensions" to tDataA
-  dispatch "RenderView" to group "Extensions"
 end _populateDataView
