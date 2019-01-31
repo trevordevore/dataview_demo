@@ -168,7 +168,7 @@ end createNodesForStack
 
 
 private function createNodesForCardOrGroup pControlRef
-  local tControlIds, tControlId, tNodeA, tNodesA, tIndex
+  local tControlIds, tControlId, tNodeA, tNodesA, tIndex, tCardId
 
   put the childControlIDs of pControlRef into tControlIds
 
@@ -180,6 +180,13 @@ private function createNodesForCardOrGroup pControlRef
     put false into tNodeA["expanded"]
     put tNodeA["type"] is not "group" into tNodeA["is leaf"]
     put empty into tNodeA["children"]
+
+    # For background groups (and any children controls) the card id must be updated
+    # because the `long id` of the control will have the id of the current card.
+    # This will lead to duplicate `id`s in the tree. If the group is shown in the tree
+    # more than once than only the last instance will display data.
+    get matchText(pControlRef, "card id ([0-9]+)", tCardId)
+    put replacetext(tNodeA["id"], "card id ([0-9]+)", " card id" && tCardId) into tNodeA["id"]
 
     add 1 to tIndex
     put tNodeA into tNodesA[tIndex]
