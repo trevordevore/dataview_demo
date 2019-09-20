@@ -1,10 +1,10 @@
 # DataView Demo Levure Project
 
 This repo contains a Levure application which demonstrates how to use
-the DataView and DataView Tree helpers. If you are checking this repo
+the DataView, DataView Tree, DataView DBCursor, and DataView Paginated Scroll helpers. If you are checking this repo
 out with git on your local computer make sure you initialize submodules.
 Levure, DataView helper, DataView Tree helper, and DataView Database
-Cursor helper are all submodules.
+Cursor helper, and DataView Paginated Scroll helper are all submodules.
 
 To open the application, launch LiveCode and open the
 `./app/standalone.livecode` stack file, switch to the Browse tool, and
@@ -19,6 +19,8 @@ DataView helper: https://github.com/trevordevore/levurehelper-dataview
 DataView Tree helper: https://github.com/trevordevore/levurehelper-dataview-tree
 
 DataView Database Cursor helper: https://github.com/trevordevore/levurehelper-database_dbcursor
+
+DataView Paginated Scroll helper: https://github.com/trevordevore/levurehelper-dataview_paginated_scroll
 
 File Browser helper: https://github.com/trevordevore/levurehelper-file_browser
 
@@ -119,3 +121,9 @@ The Movies tab also uses the **dataview_dbcursor** helper.
 
 You will find the row template used in the DataView in the
 `./app/templates/dataview movies templates` folder.
+
+## Pokemon: DataView Paginated Scroll Example
+
+The Pokemon tab uses the **dataview_paginated_scroll** helper. This example uses the JSON API available at https://pokeapi.co to show how to gradually feed pages of API results into a DataView while the user scrolls through it.
+
+You will find the row template used in the DataView in the `./app/templates/dataview pokemon templates` folder.
