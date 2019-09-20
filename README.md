@@ -6,10 +6,6 @@ out with git on your local computer make sure you initialize submodules.
 Levure, DataView helper, DataView Tree helper, and DataView Database
 Cursor helper, and DataView Paginated Scroll helper are all submodules.
 
-To open the application, launch LiveCode and open the
-`./app/standalone.livecode` stack file, switch to the Browse tool, and
-click on the **Open Application** button.
-
 Screencast walkthrough: https://youtu.be/euIHj1Qrokk
 
 Levure: https://github.com/trevordevore/levure
@@ -25,6 +21,13 @@ DataView Paginated Scroll helper: https://github.com/trevordevore/levurehelper-d
 File Browser helper: https://github.com/trevordevore/levurehelper-file_browser
 
 Requirements: Tested with LiveCode 9.
+
+## Usage
+
+1. Download the sample folder with all necessary files: https://github.com/trevordevore/dataview_demo/releases/download/v0.3.1/dataview_demo.zip
+2. To open the application, launch LiveCode and open the
+`./app/standalone.livecode` stack file, switch to the Browse tool, and
+click on the **Open Application** button.
 
 ## DataView Example
 
