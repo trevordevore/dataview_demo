@@ -13,3 +13,6 @@
 [submodule "app/helpers/file_browser"]
 	path = app/helpers/file_browser
 	url = https://github.com/trevordevore/levurehelper-file_browser.git
+[submodule "app/helpers/dataview_paginated_scroll"]
+	path = app/helpers/dataview_paginated_scroll
+	url = https://github.com/trevordevore/levurehelper-dataview_paginated_scroll.git
