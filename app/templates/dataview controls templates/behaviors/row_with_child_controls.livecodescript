@@ -11,6 +11,8 @@ on FillInData pDataA, pRow
   else
     set the iconPath of widget "Toggle" of me to the uCollapsedIconPath of the dvControl of me
   end if
+
+  set the lineStyles of widget "TreeLines" of me to the dvNodeTreeLineStyles[pDataA["id"]] of me
 end FillInData
 
 
@@ -18,9 +20,14 @@ on LayoutControl pControlRect
   local tLevel, tInset, tRect
 
   put the dvRowLevel[the dvRow of me] of me - 1 into tLevel
-  put tLevel * 15 into tInset
-  set the left of widget "Toggle" of me to item 1 of pControlRect + 7 + tInset
-  set the left of widget "Icon" of me to the right of widget "Toggle" of me + 7
+
+  local tColWidth = 27
+  put tLevel * tColWidth into tInset
+
+  set the left of widget "Toggle" of me to item 1 of pControlRect + tInset \
+        + (tColWidth - the width of widget "Toggle" of me)/2
+  set the left of widget "Icon" of me to item 1 of pControlRect + tInset + tColWidth \
+        + (tColWidth - the width of widget "Icon" of me)/2
   set the left of field "Name" of me to the right of widget "Icon" of me + 1
 
   put the rect of field "Name" of me into tRect
