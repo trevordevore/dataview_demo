@@ -67,9 +67,11 @@ command ReceiveDataForPage pUrl, pUrlStatus
     set the text of field "LblMessage" to param(0) && sPageThatIsLoading && "Count:" && tResponseA["count"]
 
     if tResponseA["count"] is not the viewProp["number of rows"] of group "Pokemon" then
+      set the dvData of group "Pokemon" to empty
+
+      # Important! Set these properties AFTER setting the dvData to empty.
       set the viewProp["number of rows"] of group "Pokemon" to tResponseA["count"]
       set the viewProp["rows per page"] of group "Pokemon" to kNumberPerPage
-      set the dvData of group "Pokemon" to empty
     end if
 
     set the dvDataForPage[sPageThatIsLoading] of group "Pokemon" to tResponseA["results"]
