@@ -68,3 +68,9 @@ command ProcessFiles pFiles
   # and that you should process.
   # Requires the "[[FRAMEWORK]]/helpers/files_and_urls helper".
 end ProcessFiles
+
+
+on errorDialog pError
+  if the environment is "development" then pass errorDialog
+  answer error pError
+end errorDialog
