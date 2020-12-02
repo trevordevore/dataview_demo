@@ -24,7 +24,7 @@ Requirements: Tested with LiveCode 9.
 
 ## Usage
 
-1. Download the sample folder with all necessary files: https://github.com/trevordevore/dataview_demo/releases/download/v0.3.1/dataview_demo.zip
+1. Download the sample folder with all necessary files: https://github.com/trevordevore/dataview_demo/releases/download/v0.4.0/dataview_demo.zip
 2. To open the application, launch LiveCode and open the
 `./app/standalone.livecode` stack file, switch to the Browse tool, and
 click on the **Open Application** button.
