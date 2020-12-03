@@ -25,7 +25,7 @@ Requirements: Tested with LiveCode 9.
 ## Usage
 
 1. Download the sample folder with all necessary files: https://github.com/trevordevore/dataview_demo/releases/download/v0.4.0/dataview_demo.zip
-If instead you would like to checkout using Git, be sure to include the --recurse-submodules option to include all required files: git clone --recurse-submodules https://github.com/trevordevore/dataview_demo.git
+If instead you would like to checkout using Git, be sure to include the `--recurse-submodules` option to include all required files: `git clone --recurse-submodules https://github.com/trevordevore/dataview_demo.git`
 2. To open the application, launch LiveCode and open the
 `./app/standalone.livecode` stack file, switch to the Browse tool, and
 click on the **Open Application** button.
